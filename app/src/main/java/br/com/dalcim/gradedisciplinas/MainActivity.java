@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         disciplinas.add(new Disciplina("ARQUITETURA DE COMPUTADORES", Horario.QUINTA_PRIMEIRO | Horario.SEXTA_SEGUNDO));
         disciplinas.add(new Disciplina("DIREITO DA COMPUTACAO", Horario.TERCA_PRIMEIRO | Horario.SEXTA_PRIMEIRO));
         
-
         ArrayList<Grade> grades = new ArrayList<>();
         Grade novaGrade;
 

@@ -1,9 +1,5 @@
 package br.com.dalcim.gradedisciplinas.model;
 
-/**
- * Created by Wiliam on 16/10/2016.
- */
-
 public abstract class Horario {
     public static final long SEGUNDA_PRIMEIRO =     1 << 0;     //  1       0000000001
     public static final long SEGUNDA_SEGUNDO =      1 << 1;     //  2       0000000010

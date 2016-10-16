@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import br.com.dalcim.gradedisciplinas.model.Disciplina;
 import br.com.dalcim.gradedisciplinas.model.Grade;
 
-/**
- * Created by Wiliam on 16/10/2016.
- */
-
 public abstract class Combinadora {
     public static void adicionaSePossivel(ArrayList<Grade> pGrades, Disciplina pDisciplina){
 
