@@ -1,25 +1,31 @@
-package br.com.dalcim.gradedisciplinas;
+package br.com.dalcim.gradedisciplinas.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import br.com.dalcim.gradedisciplinas.R;
+import br.com.dalcim.gradedisciplinas.adapter.DisciplinaAdapter;
+import br.com.dalcim.gradedisciplinas.adapter.EspacadorItemLista;
 import br.com.dalcim.gradedisciplinas.model.Disciplina;
-import br.com.dalcim.gradedisciplinas.model.Grade;
 import br.com.dalcim.gradedisciplinas.model.Horario;
-import br.com.dalcim.gradedisciplinas.util.Combinadora;
 
-public class MainActivity extends AppCompatActivity {
+public class DisciplinasActivity extends AppCompatActivity {
 
-    private static final String TAG = "DEBUGRE";
+    private RecyclerView recDisciplinas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_disciplinas);
 
+        iniciaComponentes();
+    }
+
+    private void iniciaComponentes() {
         ArrayList<Disciplina> disciplinas = new ArrayList<>();
         disciplinas.add(new Disciplina("INTRODUCAO A COMPUTACAO", Horario.SEGUNDA_PRIMEIRO | Horario.QUARTA_PRIMEIRO));
         disciplinas.add(new Disciplina("ALGORITMO II", Horario.SEGUNDA_PRIMEIRO | Horario.QUARTA_SEGUNDO));
@@ -32,23 +38,10 @@ public class MainActivity extends AppCompatActivity {
         disciplinas.add(new Disciplina("BANCO DE DADOS", Horario.QUINTA_PRIMEIRO | Horario.SEXTA_PRIMEIRO));
         disciplinas.add(new Disciplina("ARQUITETURA DE COMPUTADORES", Horario.QUINTA_PRIMEIRO | Horario.SEXTA_SEGUNDO));
         disciplinas.add(new Disciplina("DIREITO DA COMPUTACAO", Horario.TERCA_PRIMEIRO | Horario.SEXTA_PRIMEIRO));
-        
-        ArrayList<Grade> grades = new ArrayList<>();
-        Grade novaGrade;
 
-        for (Disciplina disciplina : disciplinas) {
-            novaGrade = new Grade(disciplina);
-            grades.add(novaGrade);
-            Combinadora.adicionaSePossivel(grades, disciplina);
-        }
-
-        for (Grade grade : grades) {
-            String a = "";
-            for (Disciplina d : grade.getDisciplinas()) {
-                a += d.getNome() + " ";
-            }
-
-            Log.i(TAG, "onCreate: " + a);
-        }
+        recDisciplinas = (RecyclerView) findViewById(R.id.ldis_rec_disciplinas);
+        recDisciplinas.setLayoutManager(new LinearLayoutManager(this));
+        recDisciplinas.setAdapter(new DisciplinaAdapter(this, disciplinas));
+        recDisciplinas.addItemDecoration(new EspacadorItemLista(this, R.dimen.card_margin));
     }
 }
