@@ -2,7 +2,7 @@ package br.com.dalcim.gradedisciplinas.model;
 
 public class Disciplina {
     private String nome;
-    private String cargaHoraria;
+    private int cargaHoraria;
     private long horarios;
 
     public Disciplina() {
@@ -21,11 +21,11 @@ public class Disciplina {
         this.nome = nome;
     }
 
-    public String getCargaHoraria() {
+    public int getCargaHoraria() {
         return cargaHoraria;
     }
 
-    public void setCargaHoraria(String cargaHoraria) {
+    public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
 
