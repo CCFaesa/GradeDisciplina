@@ -19,9 +19,11 @@ import br.com.dalcim.gradedisciplinas.model.Disciplina;
 public class DisciplinaAdapter extends RecyclerView.Adapter<DisciplinaAdapter.Holder>{
     private LayoutInflater inflater;
     private List<Disciplina> disciplinas;
+    private Listeners listeners;
 
-    public DisciplinaAdapter(Context ctx, List<Disciplina> disciplinas) {
+    public DisciplinaAdapter(Context ctx, List<Disciplina> disciplinas, Listeners listeners) {
         inflater = LayoutInflater.from(ctx);
+        this.listeners = listeners;
         this.disciplinas = disciplinas;
     }
 
@@ -32,11 +34,26 @@ public class DisciplinaAdapter extends RecyclerView.Adapter<DisciplinaAdapter.Ho
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
-        Disciplina disciplina = disciplinas.get(position);
+        final Disciplina disciplina = disciplinas.get(position);
 
         holder.txtDisciplina.setText(disciplina.getNome());
         holder.txtCargaHoraria.setText(String.valueOf(disciplina.getCargaHoraria()));
         holder.txtHorarios.setText(String.valueOf(disciplina.getHorarios()));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listeners.onClick(disciplina.getId());
+            }
+        });
+
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                listeners.onLongClick(disciplina.getId());
+                return true;
+            }
+        });
     }
 
     @Override
@@ -56,5 +73,10 @@ public class DisciplinaAdapter extends RecyclerView.Adapter<DisciplinaAdapter.Ho
             txtCargaHoraria = (TextView) itemView.findViewById(R.id.idis_txt_carga_horaria);
             txtHorarios = (TextView) itemView.findViewById(R.id.idis_txt_horarios);
         }
+    }
+
+    public interface Listeners{
+        void onClick(long id);
+        void onLongClick(long id);
     }
 }
