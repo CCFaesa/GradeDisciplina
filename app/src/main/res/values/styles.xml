@@ -10,6 +10,11 @@
 
     <style name="Disciplinas"/>
     <style name="Disciplinas.Text"/>
+    <style name="Disciplinas.Text.Label" parent="Disciplinas.Text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
 
     <style name="Disciplinas.Text.TituloLista" parent="Disciplinas.Text">
         <item name="android:layout_marginTop">@dimen/margin_interna_card</item>
@@ -21,12 +26,32 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Disciplinas.EditText"/>
+    <style name="Disciplinas.EditText.Normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/componente_controle</item>
+        <item name="android:background">@drawable/bg_edittext_normal</item>
+    </style>
+
     <style name="Disciplinas.Card" parent="CardView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">@dimen/card_margin</item>
         <item name="android:layout_marginRight">@dimen/card_margin</item>
         <item name="android:elevation" tools:targetApi="lollipop">3dp</item>
+    </style>
+
+    <style name="Disciplinas.Button"/>
+    <style name="Disciplinas.Button.Toogle" parent="Disciplinas.Button">
+        <item name="android:background">@drawable/bg_toogle_horario</item>
+    </style>
+
+    <style name="Disciplinas.Button.Toogle.Horario" parent="Disciplinas.Button.Toogle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/componente_controle</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginRight">6dp</item>
+        <item name="android:textColor">#A000</item>
     </style>
 
 </resources>

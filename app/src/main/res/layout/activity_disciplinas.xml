@@ -12,6 +12,7 @@
         android:layout_height="match_parent"/>
 
     <Button
+        android:id="@+id/ldis_btn_nova_disciplina"
         android:layout_width="56dp"
         android:layout_height="56dp"
         android:layout_marginRight="16dp"
