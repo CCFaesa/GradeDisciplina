@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_grades"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.dalcim.gradedisciplinas.activity.GradesActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lgra_rec_grades"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>

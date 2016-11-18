@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.CardView
+        style="@style/Disciplinas.Card"
+        card_view:cardCornerRadius="@dimen/card_radius">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_grade_horario"
+                android:layout_margin="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/igra_txt_seg1"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="seg 1"/>
+
+                    <View style="@style/Disciplinas.Separador.Grade"/>
+
+                    <TextView
+                        android:id="@+id/igra_txt_ter1"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="ter 1"/>
+
+                    <View style="@style/Disciplinas.Separador.Grade"/>
+
+                    <TextView
+                        android:id="@+id/igra_txt_qua1"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="qua 1"/>
+
+                    <View style="@style/Disciplinas.Separador.Grade"/>
+
+                    <TextView
+                        android:id="@+id/igra_txt_qui1"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="qui 1"/>
+
+                    <View style="@style/Disciplinas.Separador.Grade"/>
+
+                    <TextView
+                        android:id="@+id/igra_txt_sex1"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="sex 1"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/borda_simples"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:text="intervalo"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/igra_txt_seg2"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="seg 2"/>
+
+                    <View style="@style/Disciplinas.Separador.Grade"/>
+
+                    <TextView
+                        android:id="@+id/igra_txt_ter2"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="ter 2"/>
+
+                    <View style="@style/Disciplinas.Separador.Grade"/>
+
+                    <TextView
+                        android:id="@+id/igra_txt_qua2"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="qua 2"/>
+
+                    <View style="@style/Disciplinas.Separador.Grade"/>
+
+                    <TextView
+                        android:id="@+id/igra_txt_qui2"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="qui 2"/>
+
+                    <View style="@style/Disciplinas.Separador.Grade"/>
+
+                    <TextView
+                        android:id="@+id/igra_txt_sex2"
+                        style="@style/Disciplinas.Text.HorarioGrade"
+                        tools:text="sex 2"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

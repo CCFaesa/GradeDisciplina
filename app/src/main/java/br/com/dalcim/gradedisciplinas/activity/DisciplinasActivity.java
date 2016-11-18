@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -67,5 +69,23 @@ public class DisciplinasActivity extends AppCompatActivity {
                 startActivity(new Intent(DisciplinasActivity.this, DisciplinaActivity.class));
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_grade, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.mgra_men_gerar: gera(); break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void gera() {
+        startActivity(new Intent(this, GradesActivity.class));
     }
 }
