@@ -26,6 +26,8 @@
     <EditText
         android:id="@+id/dis_edt_carga_horaria"
         android:inputType="number"
+        android:text="0"
+        android:enabled="false"
         style="@style/Disciplinas.EditText.Normal"/>
 
     <TextView style="@style/Disciplinas.Text.Label"
@@ -40,33 +42,43 @@
         <ToggleButton
             android:id="@+id/dis_tbtn_seg1"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_seg_1"
             android:textOn="Seg 1"
-            android:textOff="Seg 1"/>
+            android:textOff="Seg 1"
+            android:onClick="onClickToggleHorario"/>
 
         <ToggleButton
             android:id="@+id/dis_tbtn_ter1"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_ter_1"
             android:textOn="Ter 1"
-            android:textOff="Ter 1"/>
+            android:textOff="Ter 1"
+            android:onClick="onClickToggleHorario"/>
 
         <ToggleButton
             android:id="@+id/dis_tbtn_qua1"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_qua_1"
             android:textOn="Qua 1"
-            android:textOff="Qua 1"/>
+            android:textOff="Qua 1"
+            android:onClick="onClickToggleHorario"/>
 
         <ToggleButton
             android:id="@+id/dis_tbtn_qui1"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_qui_1"
             android:textOn="Qui 1"
-            android:textOff="Qui 1"/>
+            android:textOff="Qui 1"
+            android:onClick="onClickToggleHorario"/>
 
         <ToggleButton
             android:id="@+id/dis_tbtn_sex1"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_sex_1"
             android:layout_marginRight="0dp"
             android:textOn="Sex 1"
-            android:textOff="Sex 1"/>
+            android:textOff="Sex 1"
+            android:onClick="onClickToggleHorario"/>
     </LinearLayout>
 
     <LinearLayout
@@ -104,33 +116,43 @@
         <ToggleButton
             android:id="@+id/dis_tbtn_seg2"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_seg_2"
             android:textOn="Seg 2"
-            android:textOff="Seg 2"/>
+            android:textOff="Seg 2"
+            android:onClick="onClickToggleHorario"/>
 
         <ToggleButton
             android:id="@+id/dis_tbtn_ter2"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_ter_2"
             android:textOn="Ter 2"
-            android:textOff="Ter 2"/>
+            android:textOff="Ter 2"
+            android:onClick="onClickToggleHorario"/>
 
         <ToggleButton
             android:id="@+id/dis_tbtn_qua2"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_qua_2"
             android:textOn="Qua 2"
-            android:textOff="Qua 2"/>
+            android:textOff="Qua 2"
+            android:onClick="onClickToggleHorario"/>
 
         <ToggleButton
             android:id="@+id/dis_tbtn_qui2"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_qui_2"
             android:textOn="Qui 2"
-            android:textOff="Qui 2"/>
+            android:textOff="Qui 2"
+            android:onClick="onClickToggleHorario"/>
 
         <ToggleButton
             android:id="@+id/dis_tbtn_sex2"
             style="@style/Disciplinas.Button.Toogle.Horario"
+            android:background="@drawable/bg_tg_sex_2"
             android:layout_marginRight="0dp"
             android:textOn="Sex 2"
-            android:textOff="Sex 2"/>
+            android:textOff="Sex 2"
+            android:onClick="onClickToggleHorario"/>
     </LinearLayout>
 
 </LinearLayout>

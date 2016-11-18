@@ -2,9 +2,12 @@ package br.com.dalcim.gradedisciplinas.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import br.com.dalcim.gradedisciplinas.R;
@@ -36,6 +39,7 @@ public class DisciplinaActivity extends AppCompatActivity {
         iniciaComponentes();
 
         long disciplina_id = getIntent().getLongExtra("DISCIPLINA_ID", 0);
+
         if(disciplina_id > 0){
             disciplina = new DisciplinaDAO(this).buscaID(disciplina_id);
             edtNome.setText(disciplina.getNome());
@@ -55,6 +59,7 @@ public class DisciplinaActivity extends AppCompatActivity {
             tbtnSex2.setChecked((horarios & Horario.SEXTA_SEGUNDO) != 0);
         }else{
             disciplina = new Disciplina();
+            edtCargaHoraria.setText(String.valueOf(0));
         }
     }
 
@@ -100,6 +105,11 @@ public class DisciplinaActivity extends AppCompatActivity {
         horarios |= tbtnQui2.isChecked() ? Horario.QUINTA_SEGUNDO : 0;
         horarios |= tbtnSex1.isChecked() ? Horario.SEXTA_PRIMEIRO : 0;
         horarios |= tbtnSex2.isChecked() ? Horario.SEXTA_SEGUNDO : 0;
+        
+        if(horarios == 0 || TextUtils.isEmpty(edtNome.getText().toString())){
+            Toast.makeText(this, "Dados invalidos", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         disciplina.setHorarios(horarios);
         disciplina.setNome(edtNome.getText().toString());
@@ -107,5 +117,19 @@ public class DisciplinaActivity extends AppCompatActivity {
 
         new DisciplinaDAO(this).salva(disciplina);
         finish();
+    }
+
+    public void onClickToggleHorario(View view) {
+        ToggleButton t = (ToggleButton) view;
+        if(t.isChecked()){
+            int ch = Integer.valueOf(edtCargaHoraria.getText().toString());
+            if(ch > 40){
+                t.setChecked(false);
+            }else{
+                edtCargaHoraria.setText(String.valueOf(ch + 40));
+            }
+        }else{
+            edtCargaHoraria.setText(String.valueOf(Integer.valueOf(edtCargaHoraria.getText().toString()) - 40));
+        }
     }
 }

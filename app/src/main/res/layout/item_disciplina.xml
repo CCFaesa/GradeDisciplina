@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -8,8 +9,7 @@
         style="@style/Disciplinas.Card"
         card_view:cardCornerRadius="@dimen/card_radius">
 
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:tools="http://schemas.android.com/tools"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -35,20 +35,38 @@
                 android:layout_toRightOf="@id/idis_txt_carga_horaria"
                 android:text=" hrs" />
 
-            <TextView
-                android:id="@+id/idis_txt_horarios"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:layout_marginLeft="@dimen/margin_interna_card"
                 android:layout_marginBottom="@dimen/margin_interna_card"
-                android:layout_below="@id/idis_txt_carga_horaria"
-                tools:text="Segunda - Terca"/>
+                android:layout_below="@id/idis_txt_carga_horaria" >
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@id/idis_txt_horarios"
-                android:background="#999"/>
+                <ToggleButton
+                    android:id="@+id/idis_view_color1"
+                    android:layout_width="@dimen/widht_color_disciplina"
+                    android:layout_height="@dimen/height_color_disciplina"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:textOn=""
+                    android:background="@drawable/bg_toogle_horario" />
+                <View
+                    android:layout_width="6dp"
+                    android:layout_height="1dp"/>
+                <ToggleButton
+                    android:id="@+id/idis_view_color2"
+                    android:layout_width="@dimen/widht_color_disciplina"
+                    android:layout_height="@dimen/height_color_disciplina"
+                    android:background="@drawable/bg_toogle_horario"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:textOn=""
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+
+            </LinearLayout>
+
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

@@ -3,6 +3,18 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="background">#EEE</color>
 
     <color name="separador">#666</color>
+
+    <color name="seg_1">#AA6600</color>
+    <color name="seg_2">#00AA00</color>
+    <color name="ter_1">#FF0000</color>
+    <color name="ter_2">#FFFF00</color>
+    <color name="qua_1">#00FFFF</color>
+    <color name="qua_2">#FF00FF</color>
+    <color name="qui_1">#0066AA</color>
+    <color name="qui_2">#6600FF</color>
+    <color name="sex_1">#888800</color>
+    <color name="sex_2">#FF9999</color>
 </resources>

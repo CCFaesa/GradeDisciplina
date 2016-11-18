@@ -7,10 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.Collections;
 import java.util.List;
 
 import br.com.dalcim.gradedisciplinas.R;
 import br.com.dalcim.gradedisciplinas.model.Disciplina;
+import br.com.dalcim.gradedisciplinas.util.Coloradora;
 
 /**
  * Created by Wiliam on 16/10/2016.
@@ -38,7 +40,16 @@ public class DisciplinaAdapter extends RecyclerView.Adapter<DisciplinaAdapter.Ho
 
         holder.txtDisciplina.setText(disciplina.getNome());
         holder.txtCargaHoraria.setText(String.valueOf(disciplina.getCargaHoraria()));
-        holder.txtHorarios.setText(String.valueOf(disciplina.getHorarios()));
+
+        List<Integer> cores = Coloradora.getColors(disciplina.getHorarios());
+        holder.viewCor1.setBackgroundResource(cores.get(0));
+
+        if(cores.size() > 1){
+            holder.viewCor2.setVisibility(View.VISIBLE);
+            holder.viewCor2.setBackgroundResource(cores.get(1));
+        }else{
+            holder.viewCor2.setVisibility(View.GONE);
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +65,7 @@ public class DisciplinaAdapter extends RecyclerView.Adapter<DisciplinaAdapter.Ho
                 return true;
             }
         });
+
     }
 
     @Override
@@ -64,14 +76,16 @@ public class DisciplinaAdapter extends RecyclerView.Adapter<DisciplinaAdapter.Ho
     class Holder extends RecyclerView.ViewHolder{
         TextView txtDisciplina;
         TextView txtCargaHoraria;
-        TextView txtHorarios;
+        View viewCor1;
+        View viewCor2;
 
         public Holder(View itemView) {
             super(itemView);
 
             txtDisciplina = (TextView) itemView.findViewById(R.id.idis_txt_disciplina);
             txtCargaHoraria = (TextView) itemView.findViewById(R.id.idis_txt_carga_horaria);
-            txtHorarios = (TextView) itemView.findViewById(R.id.idis_txt_horarios);
+            viewCor1 = itemView.findViewById(R.id.idis_view_color1);
+            viewCor2 = itemView.findViewById(R.id.idis_view_color2);
         }
     }
 
